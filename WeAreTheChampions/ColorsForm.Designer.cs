@@ -29,9 +29,10 @@ namespace WeAreTheChampions
         /// </summary>
         private void InitializeComponent()
         {
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.lbColors = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnCancelEdit = new System.Windows.Forms.Button();
             this.btnAddColor = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.pbPreview = new System.Windows.Forms.PictureBox();
@@ -45,7 +46,6 @@ namespace WeAreTheChampions
             this.label2 = new System.Windows.Forms.Label();
             this.btnEditColor = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
-            this.btnCancelEdit = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbPreview)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudBlue)).BeginInit();
@@ -53,15 +53,15 @@ namespace WeAreTheChampions
             ((System.ComponentModel.ISupportInitialize)(this.nudRed)).BeginInit();
             this.SuspendLayout();
             // 
-            // listBox1
+            // lbColors
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 20;
-            this.listBox1.Location = new System.Drawing.Point(13, 34);
-            this.listBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(244, 324);
-            this.listBox1.TabIndex = 0;
+            this.lbColors.FormattingEnabled = true;
+            this.lbColors.ItemHeight = 20;
+            this.lbColors.Location = new System.Drawing.Point(13, 34);
+            this.lbColors.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.lbColors.Name = "lbColors";
+            this.lbColors.Size = new System.Drawing.Size(244, 324);
+            this.lbColors.TabIndex = 0;
             // 
             // label1
             // 
@@ -93,6 +93,17 @@ namespace WeAreTheChampions
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Add/Edit Color";
             // 
+            // btnCancelEdit
+            // 
+            this.btnCancelEdit.Location = new System.Drawing.Point(115, 295);
+            this.btnCancelEdit.Name = "btnCancelEdit";
+            this.btnCancelEdit.Size = new System.Drawing.Size(99, 29);
+            this.btnCancelEdit.TabIndex = 14;
+            this.btnCancelEdit.Text = "Cancel";
+            this.btnCancelEdit.UseVisualStyleBackColor = true;
+            this.btnCancelEdit.Visible = false;
+            this.btnCancelEdit.Click += new System.EventHandler(this.btnCancelEdit_Click);
+            // 
             // btnAddColor
             // 
             this.btnAddColor.Location = new System.Drawing.Point(115, 331);
@@ -101,6 +112,7 @@ namespace WeAreTheChampions
             this.btnAddColor.TabIndex = 13;
             this.btnAddColor.Text = "Add Color";
             this.btnAddColor.UseVisualStyleBackColor = true;
+            this.btnAddColor.Click += new System.EventHandler(this.btnAddColor_Click);
             // 
             // label6
             // 
@@ -131,6 +143,7 @@ namespace WeAreTheChampions
             this.nudBlue.Name = "nudBlue";
             this.nudBlue.Size = new System.Drawing.Size(120, 26);
             this.nudBlue.TabIndex = 10;
+            this.nudBlue.ValueChanged += new System.EventHandler(this.nudBlue_ValueChanged);
             // 
             // label5
             // 
@@ -152,6 +165,7 @@ namespace WeAreTheChampions
             this.nudGreen.Name = "nudGreen";
             this.nudGreen.Size = new System.Drawing.Size(120, 26);
             this.nudGreen.TabIndex = 8;
+            this.nudGreen.ValueChanged += new System.EventHandler(this.nudBlue_ValueChanged);
             // 
             // label4
             // 
@@ -173,6 +187,7 @@ namespace WeAreTheChampions
             this.nudRed.Name = "nudRed";
             this.nudRed.Size = new System.Drawing.Size(120, 26);
             this.nudRed.TabIndex = 6;
+            this.nudRed.ValueChanged += new System.EventHandler(this.nudBlue_ValueChanged);
             // 
             // label3
             // 
@@ -208,6 +223,7 @@ namespace WeAreTheChampions
             this.btnEditColor.TabIndex = 14;
             this.btnEditColor.Text = "Edit Selected";
             this.btnEditColor.UseVisualStyleBackColor = true;
+            this.btnEditColor.Click += new System.EventHandler(this.btnEditColor_Click);
             // 
             // btnDelete
             // 
@@ -218,16 +234,7 @@ namespace WeAreTheChampions
             this.btnDelete.TabIndex = 15;
             this.btnDelete.Text = "Delete Selected";
             this.btnDelete.UseVisualStyleBackColor = true;
-            // 
-            // btnCancelEdit
-            // 
-            this.btnCancelEdit.Location = new System.Drawing.Point(115, 295);
-            this.btnCancelEdit.Name = "btnCancelEdit";
-            this.btnCancelEdit.Size = new System.Drawing.Size(99, 29);
-            this.btnCancelEdit.TabIndex = 14;
-            this.btnCancelEdit.Text = "Cancel";
-            this.btnCancelEdit.UseVisualStyleBackColor = true;
-            this.btnCancelEdit.Visible = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // ColorsForm
             // 
@@ -238,7 +245,7 @@ namespace WeAreTheChampions
             this.Controls.Add(this.btnEditColor);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.lbColors);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "ColorsForm";
@@ -257,7 +264,7 @@ namespace WeAreTheChampions
 
         #endregion
 
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox lbColors;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.NumericUpDown nudRed;

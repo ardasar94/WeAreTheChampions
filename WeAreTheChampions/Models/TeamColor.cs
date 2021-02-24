@@ -12,9 +12,11 @@ namespace WeAreTheChampions.Models
     public class TeamColor
     {
         [Required]
+        [ForeignKey("Team")]
         public int TeamId { get; set; }
         public virtual Team Team { get; set; }
 
+        [ForeignKey("Color")]
         public int ColorId { get; set; }
         public virtual Color Color { get; set; }
 

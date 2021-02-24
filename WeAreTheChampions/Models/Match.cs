@@ -14,7 +14,7 @@ namespace WeAreTheChampions.Models
         public int Id { get; set; }
 
         [Required]
-        public DateTime MatchTime { get; set; }
+        public DateTime? MatchTime { get; set; }
 
         [Required]
         public int Team1Id { get; set; }
@@ -29,7 +29,7 @@ namespace WeAreTheChampions.Models
 
         [Required]
         public int Score2 { get; set; }
-        public Result Result { get; set; }
+        public Result? Result { get; set; }
 
     }
 }

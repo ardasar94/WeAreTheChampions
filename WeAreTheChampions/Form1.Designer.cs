@@ -35,12 +35,12 @@ namespace WeAreTheChampions
             this.tsmiPlayers = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.btnNewMatch = new System.Windows.Forms.Button();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnNewMatch = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
@@ -65,12 +65,14 @@ namespace WeAreTheChampions
             this.tsmiTeams.Name = "tsmiTeams";
             this.tsmiTeams.Size = new System.Drawing.Size(52, 19);
             this.tsmiTeams.Text = "Teams";
+            this.tsmiTeams.Click += new System.EventHandler(this.tsmiTeams_Click);
             // 
             // tsmiColors
             // 
             this.tsmiColors.Name = "tsmiColors";
             this.tsmiColors.Size = new System.Drawing.Size(53, 19);
             this.tsmiColors.Text = "Colors";
+            this.tsmiColors.Click += new System.EventHandler(this.tsmiColors_Click);
             // 
             // tsmiPlayers
             // 
@@ -101,16 +103,6 @@ namespace WeAreTheChampions
             this.dataGridView1.Size = new System.Drawing.Size(625, 315);
             this.dataGridView1.TabIndex = 2;
             // 
-            // btnNewMatch
-            // 
-            this.btnNewMatch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNewMatch.Location = new System.Drawing.Point(504, 44);
-            this.btnNewMatch.Name = "btnNewMatch";
-            this.btnNewMatch.Size = new System.Drawing.Size(133, 26);
-            this.btnNewMatch.TabIndex = 3;
-            this.btnNewMatch.Text = "New Match";
-            this.btnNewMatch.UseVisualStyleBackColor = true;
-            // 
             // Column1
             // 
             this.Column1.HeaderText = "Team";
@@ -135,6 +127,16 @@ namespace WeAreTheChampions
             // 
             this.Column5.HeaderText = "Result";
             this.Column5.Name = "Column5";
+            // 
+            // btnNewMatch
+            // 
+            this.btnNewMatch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNewMatch.Location = new System.Drawing.Point(504, 44);
+            this.btnNewMatch.Name = "btnNewMatch";
+            this.btnNewMatch.Size = new System.Drawing.Size(133, 26);
+            this.btnNewMatch.TabIndex = 3;
+            this.btnNewMatch.Text = "New Match";
+            this.btnNewMatch.UseVisualStyleBackColor = true;
             // 
             // btnEdit
             // 

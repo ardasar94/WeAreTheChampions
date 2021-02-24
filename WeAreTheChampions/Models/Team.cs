@@ -11,11 +11,24 @@ namespace WeAreTheChampions.Models
     [Table("Teams")]
     public class Team
     {
+        public Team()
+        {
+            TeamPlayers = new HashSet<Player>();
+            TeamColors = new HashSet<Color>();
+            Team1Matches = new HashSet<Match>();
+            Team2Matches = new HashSet<Match>();
+        }
         public int Id { get; set; }
         [Required]
         public string TeamName { get; set; }
         public ICollection<Player> TeamPlayers { get; set; }
         public ICollection<Color> TeamColors { get; set; }
-        public ICollection<Match> TeamMatches { get; set; }
+        public ICollection<Match> Team1Matches { get; set; }
+        public ICollection<Match> Team2Matches { get; set; }
+
+        public override string ToString()
+        {
+            return TeamName;
+        }
     }
 }
