@@ -55,6 +55,8 @@ namespace WeAreTheChampions
             // 
             // lbColors
             // 
+            this.lbColors.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.lbColors.FormattingEnabled = true;
             this.lbColors.ItemHeight = 20;
             this.lbColors.Location = new System.Drawing.Point(13, 34);
@@ -216,6 +218,7 @@ namespace WeAreTheChampions
             // 
             // btnEditColor
             // 
+            this.btnEditColor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnEditColor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditColor.Location = new System.Drawing.Point(13, 386);
             this.btnEditColor.Name = "btnEditColor";
@@ -227,6 +230,7 @@ namespace WeAreTheChampions
             // 
             // btnDelete
             // 
+            this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.Location = new System.Drawing.Point(118, 386);
             this.btnDelete.Name = "btnDelete";

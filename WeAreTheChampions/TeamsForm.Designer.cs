@@ -59,6 +59,9 @@ namespace WeAreTheChampions
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.btnCancelEdit);
             this.groupBox1.Controls.Add(this.btnAddTeam);
             this.groupBox1.Controls.Add(this.btnDeleteColor);
@@ -154,6 +157,8 @@ namespace WeAreTheChampions
             // 
             // lbColors
             // 
+            this.lbColors.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.lbColors.Enabled = false;
             this.lbColors.FormattingEnabled = true;
             this.lbColors.ItemHeight = 20;
@@ -180,6 +185,7 @@ namespace WeAreTheChampions
             // 
             // btnOyuncular
             // 
+            this.btnOyuncular.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnOyuncular.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOyuncular.Location = new System.Drawing.Point(467, 313);
             this.btnOyuncular.Name = "btnOyuncular";
@@ -191,6 +197,7 @@ namespace WeAreTheChampions
             // 
             // btnEditTeam
             // 
+            this.btnEditTeam.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnEditTeam.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditTeam.Location = new System.Drawing.Point(196, 313);
             this.btnEditTeam.Name = "btnEditTeam";
@@ -202,6 +209,7 @@ namespace WeAreTheChampions
             // 
             // btnDelete
             // 
+            this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.Location = new System.Drawing.Point(324, 313);
             this.btnDelete.Name = "btnDelete";
@@ -213,6 +221,8 @@ namespace WeAreTheChampions
             // 
             // lbTeams
             // 
+            this.lbTeams.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.lbTeams.FormattingEnabled = true;
             this.lbTeams.ItemHeight = 20;
             this.lbTeams.Location = new System.Drawing.Point(17, 33);
@@ -234,6 +244,7 @@ namespace WeAreTheChampions
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "TeamsForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Teams";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

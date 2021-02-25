@@ -39,6 +39,11 @@ namespace WeAreTheChampions
             }
             if (btnAddColor.Text == "Add Color")
             {
+                if (db.Colors.Any(x => x.ColorName == txtColorName.Text.Trim()))
+                {
+                    MessageBox.Show("There is already a color with that name");
+                    return;
+                }
                 db.Colors.Add(new Models.Color() { ColorName = txtColorName.Text.Trim(), Red = (int)nudRed.Value, Green = (int)nudGreen.Value, Blue = (int)nudBlue.Value });
             }
             else if (btnAddColor.Text == "Edit Color")
@@ -61,6 +66,7 @@ namespace WeAreTheChampions
             nudBlue.Value = 0;
             btnCancelEdit.Visible = false;
             txtColorName.Clear();
+            lbColors.Enabled = true;
         }
 
         private void nudBlue_ValueChanged(object sender, EventArgs e)
@@ -71,6 +77,7 @@ namespace WeAreTheChampions
 
         private void btnEditColor_Click(object sender, EventArgs e)
         {
+            lbColors.Enabled = false;
             btnAddColor.Text = "Edit Color";
             btnCancelEdit.Visible = true;
             changingColor = (Models.Color)lbColors.SelectedItem;

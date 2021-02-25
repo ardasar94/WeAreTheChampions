@@ -38,7 +38,12 @@ namespace WeAreTheChampions
             }
             if (btnAddTeam.Text == "Add Team")
             {
-                db.Teams.Add(new Team() { TeamName = txtTeamName.Text });
+                if (db.Teams.Any(x => x.TeamName == txtTeamName.Text.Trim()))
+                {
+                    MessageBox.Show("There is already a time with that name");
+                    return;
+                }
+                db.Teams.Add(new Team() { TeamName = txtTeamName.Text.Trim() });
                 db.SaveChanges();
                 CleanForm();
                 ShowTeams();

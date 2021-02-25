@@ -72,6 +72,8 @@ namespace WeAreTheChampions
             // 
             // lbTeamPlayers
             // 
+            this.lbTeamPlayers.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.lbTeamPlayers.FormattingEnabled = true;
             this.lbTeamPlayers.ItemHeight = 20;
             this.lbTeamPlayers.Location = new System.Drawing.Point(16, 65);
@@ -81,6 +83,7 @@ namespace WeAreTheChampions
             // 
             // btnDeletePlayer
             // 
+            this.btnDeletePlayer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnDeletePlayer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeletePlayer.Location = new System.Drawing.Point(16, 315);
             this.btnDeletePlayer.Name = "btnDeletePlayer";
@@ -92,6 +95,9 @@ namespace WeAreTheChampions
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.txtSearch);
             this.groupBox1.Controls.Add(this.btnAddPayer);
             this.groupBox1.Controls.Add(this.label3);
@@ -114,6 +120,7 @@ namespace WeAreTheChampions
             // 
             // btnAddPayer
             // 
+            this.btnAddPayer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnAddPayer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddPayer.Location = new System.Drawing.Point(53, 275);
             this.btnAddPayer.Name = "btnAddPayer";
@@ -135,6 +142,9 @@ namespace WeAreTheChampions
             // 
             // lbAllplayers
             // 
+            this.lbAllplayers.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lbAllplayers.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbAllplayers.FormattingEnabled = true;
             this.lbAllplayers.ItemHeight = 16;
@@ -157,6 +167,7 @@ namespace WeAreTheChampions
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "TeamPlayersForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Team Players";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
