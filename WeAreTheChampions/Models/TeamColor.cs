@@ -20,5 +20,10 @@ namespace WeAreTheChampions.Models
         public int ColorId { get; set; }
         public virtual Color Color { get; set; }
 
+        public override string ToString()
+        {
+            return Color.ColorName;
+        }
+
     }
 }

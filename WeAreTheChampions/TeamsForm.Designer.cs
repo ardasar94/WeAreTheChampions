@@ -109,6 +109,7 @@ namespace WeAreTheChampions
             this.btnDeleteColor.TabIndex = 7;
             this.btnDeleteColor.Text = "Delete Selected Color";
             this.btnDeleteColor.UseVisualStyleBackColor = true;
+            this.btnDeleteColor.Click += new System.EventHandler(this.btnDeleteColor_Click);
             // 
             // btnAddColor
             // 
@@ -186,6 +187,7 @@ namespace WeAreTheChampions
             this.btnOyuncular.TabIndex = 8;
             this.btnOyuncular.Text = "Players";
             this.btnOyuncular.UseVisualStyleBackColor = true;
+            this.btnOyuncular.Click += new System.EventHandler(this.btnOyuncular_Click);
             // 
             // btnEditTeam
             // 

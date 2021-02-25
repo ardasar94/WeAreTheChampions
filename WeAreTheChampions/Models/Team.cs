@@ -14,7 +14,7 @@ namespace WeAreTheChampions.Models
         public Team()
         {
             TeamPlayers = new HashSet<Player>();
-            TeamColors = new HashSet<Color>();
+            TeamColors = new HashSet<TeamColor>();
             Team1Matches = new HashSet<Match>();
             Team2Matches = new HashSet<Match>();
         }
@@ -22,7 +22,7 @@ namespace WeAreTheChampions.Models
         [Required]
         public string TeamName { get; set; }
         public ICollection<Player> TeamPlayers { get; set; }
-        public ICollection<Color> TeamColors { get; set; }
+        public ICollection<TeamColor> TeamColors { get; set; }
         public ICollection<Match> Team1Matches { get; set; }
         public ICollection<Match> Team2Matches { get; set; }
 

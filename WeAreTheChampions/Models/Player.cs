@@ -17,5 +17,10 @@ namespace WeAreTheChampions.Models
 
         [Required]
         public string PlayerName { get; set; }
+
+        public override string ToString()
+        {
+            return PlayerName;
+        }
     }
 }

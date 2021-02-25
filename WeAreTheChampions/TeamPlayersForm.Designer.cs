@@ -35,10 +35,10 @@ namespace WeAreTheChampions
             this.lbTeamPlayers = new System.Windows.Forms.ListBox();
             this.btnDeletePlayer = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.lbAllplayers = new System.Windows.Forms.ListBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnAddPayer = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lbAllplayers = new System.Windows.Forms.ListBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -88,10 +88,11 @@ namespace WeAreTheChampions
             this.btnDeletePlayer.TabIndex = 4;
             this.btnDeletePlayer.Text = "Delete Selected";
             this.btnDeletePlayer.UseVisualStyleBackColor = true;
+            this.btnDeletePlayer.Click += new System.EventHandler(this.btnDeletePlayer_Click);
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.txtSearch);
             this.groupBox1.Controls.Add(this.btnAddPayer);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.lbAllplayers);
@@ -102,15 +103,25 @@ namespace WeAreTheChampions
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Add Player";
             // 
-            // lbAllplayers
+            // txtSearch
             // 
-            this.lbAllplayers.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbAllplayers.FormattingEnabled = true;
-            this.lbAllplayers.ItemHeight = 16;
-            this.lbAllplayers.Location = new System.Drawing.Point(7, 57);
-            this.lbAllplayers.Name = "lbAllplayers";
-            this.lbAllplayers.Size = new System.Drawing.Size(245, 212);
-            this.lbAllplayers.TabIndex = 0;
+            this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearch.Location = new System.Drawing.Point(69, 33);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(183, 20);
+            this.txtSearch.TabIndex = 7;
+            this.txtSearch.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // btnAddPayer
+            // 
+            this.btnAddPayer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddPayer.Location = new System.Drawing.Point(53, 275);
+            this.btnAddPayer.Name = "btnAddPayer";
+            this.btnAddPayer.Size = new System.Drawing.Size(154, 30);
+            this.btnAddPayer.TabIndex = 6;
+            this.btnAddPayer.Text = "Add Selected";
+            this.btnAddPayer.UseVisualStyleBackColor = true;
+            this.btnAddPayer.Click += new System.EventHandler(this.btnAddPayer_Click);
             // 
             // label3
             // 
@@ -122,23 +133,15 @@ namespace WeAreTheChampions
             this.label3.TabIndex = 1;
             this.label3.Text = "Search:";
             // 
-            // btnAddPayer
+            // lbAllplayers
             // 
-            this.btnAddPayer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddPayer.Location = new System.Drawing.Point(53, 275);
-            this.btnAddPayer.Name = "btnAddPayer";
-            this.btnAddPayer.Size = new System.Drawing.Size(154, 30);
-            this.btnAddPayer.TabIndex = 6;
-            this.btnAddPayer.Text = "Add Selected";
-            this.btnAddPayer.UseVisualStyleBackColor = true;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(69, 33);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(183, 20);
-            this.textBox1.TabIndex = 7;
+            this.lbAllplayers.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbAllplayers.FormattingEnabled = true;
+            this.lbAllplayers.ItemHeight = 16;
+            this.lbAllplayers.Location = new System.Drawing.Point(7, 57);
+            this.lbAllplayers.Name = "lbAllplayers";
+            this.lbAllplayers.Size = new System.Drawing.Size(245, 212);
+            this.lbAllplayers.TabIndex = 0;
             // 
             // TeamPlayersForm
             // 
@@ -170,7 +173,7 @@ namespace WeAreTheChampions
         private System.Windows.Forms.ListBox lbTeamPlayers;
         private System.Windows.Forms.Button btnDeletePlayer;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Button btnAddPayer;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ListBox lbAllplayers;

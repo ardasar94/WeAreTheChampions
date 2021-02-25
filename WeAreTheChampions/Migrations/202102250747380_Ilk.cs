@@ -20,15 +20,6 @@
                 .PrimaryKey(t => t.Id);
             
             CreateTable(
-                "dbo.Teams",
-                c => new
-                    {
-                        Id = c.Int(nullable: false, identity: true),
-                        TeamName = c.String(nullable: false),
-                    })
-                .PrimaryKey(t => t.Id);
-            
-            CreateTable(
                 "dbo.Matches",
                 c => new
                     {
@@ -47,16 +38,13 @@
                 .Index(t => t.Team2Id);
             
             CreateTable(
-                "dbo.Players",
+                "dbo.Teams",
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
-                        TeamId = c.Int(nullable: false),
-                        PlayerName = c.String(nullable: false),
+                        TeamName = c.String(nullable: false),
                     })
-                .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Teams", t => t.TeamId, cascadeDelete: true)
-                .Index(t => t.TeamId);
+                .PrimaryKey(t => t.Id);
             
             CreateTable(
                 "dbo.TeamColors",
@@ -72,41 +60,35 @@
                 .Index(t => t.ColorId);
             
             CreateTable(
-                "dbo.TeamColor1",
+                "dbo.Players",
                 c => new
                     {
-                        Team_Id = c.Int(nullable: false),
-                        Color_Id = c.Int(nullable: false),
+                        Id = c.Int(nullable: false, identity: true),
+                        TeamId = c.Int(nullable: false),
+                        PlayerName = c.String(nullable: false),
                     })
-                .PrimaryKey(t => new { t.Team_Id, t.Color_Id })
-                .ForeignKey("dbo.Teams", t => t.Team_Id, cascadeDelete: true)
-                .ForeignKey("dbo.Colors", t => t.Color_Id, cascadeDelete: true)
-                .Index(t => t.Team_Id)
-                .Index(t => t.Color_Id);
+                .PrimaryKey(t => t.Id)
+                .ForeignKey("dbo.Teams", t => t.TeamId, cascadeDelete: true)
+                .Index(t => t.TeamId);
             
         }
         
         public override void Down()
         {
-            DropForeignKey("dbo.TeamColors", "TeamId", "dbo.Teams");
-            DropForeignKey("dbo.TeamColors", "ColorId", "dbo.Colors");
-            DropForeignKey("dbo.Players", "TeamId", "dbo.Teams");
-            DropForeignKey("dbo.TeamColor1", "Color_Id", "dbo.Colors");
-            DropForeignKey("dbo.TeamColor1", "Team_Id", "dbo.Teams");
             DropForeignKey("dbo.Matches", "Team2Id", "dbo.Teams");
             DropForeignKey("dbo.Matches", "Team1Id", "dbo.Teams");
-            DropIndex("dbo.TeamColor1", new[] { "Color_Id" });
-            DropIndex("dbo.TeamColor1", new[] { "Team_Id" });
+            DropForeignKey("dbo.Players", "TeamId", "dbo.Teams");
+            DropForeignKey("dbo.TeamColors", "TeamId", "dbo.Teams");
+            DropForeignKey("dbo.TeamColors", "ColorId", "dbo.Colors");
+            DropIndex("dbo.Players", new[] { "TeamId" });
             DropIndex("dbo.TeamColors", new[] { "ColorId" });
             DropIndex("dbo.TeamColors", new[] { "TeamId" });
-            DropIndex("dbo.Players", new[] { "TeamId" });
             DropIndex("dbo.Matches", new[] { "Team2Id" });
             DropIndex("dbo.Matches", new[] { "Team1Id" });
-            DropTable("dbo.TeamColor1");
-            DropTable("dbo.TeamColors");
             DropTable("dbo.Players");
-            DropTable("dbo.Matches");
+            DropTable("dbo.TeamColors");
             DropTable("dbo.Teams");
+            DropTable("dbo.Matches");
             DropTable("dbo.Colors");
         }
     }

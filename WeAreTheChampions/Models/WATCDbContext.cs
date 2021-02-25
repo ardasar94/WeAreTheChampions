@@ -16,7 +16,7 @@ namespace WeAreTheChampions.Models
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<TeamColor>().HasKey(k => new { k.TeamId, k.ColorId });
+            modelBuilder.Entity<TeamColor>().HasKey(k => new { k.TeamId, k.ColorId});
             modelBuilder.Entity<Match>()
                         .HasRequired(m => m.Team1)
                         .WithMany(t => t.Team1Matches)

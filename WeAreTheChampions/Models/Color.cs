@@ -25,8 +25,6 @@ namespace WeAreTheChampions.Models
         [Range(0, 255)]
         public int Blue { get; set; }
 
-        public virtual ICollection<Team> Teams { get; set; }
-
         public override string ToString()
         {
             return ColorName;

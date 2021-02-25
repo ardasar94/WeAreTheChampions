@@ -26,7 +26,7 @@ namespace WeAreTheChampions
         private void ShowTeams()
         {
             lbTeams.DataSource = null;
-            lbTeams.DataSource = db.Teams.ToList();
+            lbTeams.DataSource = db.Teams.Where(x => x.TeamName != "unspecified").ToList();
         }
 
         private void btnAddTeam_Click(object sender, EventArgs e)
@@ -50,6 +50,7 @@ namespace WeAreTheChampions
                 db.SaveChanges();
                 ShowTeams();
                 CleanForm();
+                lbTeams.Enabled = true;               
             }
         }
 
@@ -62,12 +63,19 @@ namespace WeAreTheChampions
             btnAddTeam.Text = "Add Team";
             btnCancelEdit.Visible = false;
             txtTeamName.Clear();
+            lbColors.DataSource = null;
+            for (int i = 0; i < lbColors.Items.Count; i++)
+            {
+                lbColors.Items.RemoveAt(i);
+            }
         }
 
         private void btnEditTeam_Click(object sender, EventArgs e)
         {
+            CleanForm();
             if (lbTeams.SelectedItem != null)
             {
+                lbTeams.Enabled = false;
                 lbColors.Enabled = true;
                 cboColors.Enabled = true;
                 btnAddColor.Enabled = true;
@@ -76,22 +84,43 @@ namespace WeAreTheChampions
                 btnCancelEdit.Visible = true;
                 teamEditing = (Team)lbTeams.SelectedItem;
                 txtTeamName.Text = teamEditing.TeamName;
-                if (teamEditing.TeamColors.Count > 0)
+                //if (teamEditing.TeamColors.Count > 0)
+                //{
+                foreach (var item in db.TeamColors)
                 {
-                    lbColors.DataSource = teamEditing.TeamColors;
+                    if (item.TeamId == teamEditing.Id)
+                    {
+                        lbColors.Items.Add(item);
+                    }
                 }
-
+                //lbColors.DataSource = db.TeamColors.Where(x => x.TeamId == teamEditing.Id);
+                //}
             }
         }
 
         private void btnCancelEdit_Click(object sender, EventArgs e)
         {
             CleanForm();
+            for (int i = 0; i < lbColors.Items.Count; i++)
+            {
+                lbColors.Items.RemoveAt(i);
+            }
+            lbTeams.Enabled = true;
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
             var teamDeleting = (Team)lbTeams.SelectedItem;
+            if (teamDeleting.TeamPlayers.Count > 0)
+            {
+                MessageBox.Show("There is some player in this team. Please change this players team before deleting process");
+                return;
+            }
+            if (db.Matches.Any(x => x.Team1.Id == teamDeleting.Id) || db.Matches.Any(x => x.Team2.Id == teamDeleting.Id))
+            {
+                MessageBox.Show("There is some shown matches for this team. Please delete this matches before deleting process");
+                return;
+            }
             db.Teams.Remove(teamDeleting);
             db.SaveChanges();
             ShowTeams();
@@ -100,11 +129,37 @@ namespace WeAreTheChampions
         private void btnAddColor_Click(object sender, EventArgs e)
         {
             var editingTeam = (Team)lbTeams.SelectedItem;
-            teamEditing.TeamColors.Add((Models.Color)cboColors.SelectedItem);
+            Models.Color newColor = (Models.Color)cboColors.SelectedItem;
+            if(teamEditing.TeamColors.Any(x => x.ColorId == newColor.Id))
+            {
+                MessageBox.Show("This team has already this color");
+                return;
+            }
+            teamEditing.TeamColors.Add(new TeamColor() { Team = editingTeam, Color = (Models.Color)cboColors.SelectedItem });
             db.SaveChanges();
             cboColors.SelectedIndex = -1;
             lbColors.DataSource = null;
-            lbColors.DataSource = db.Colors.ToList();
+            lbColors.DataSource = teamEditing.TeamColors.ToList();
+        }
+
+        private void btnDeleteColor_Click(object sender, EventArgs e)
+        {
+            var team = (Team)lbTeams.SelectedItem;
+            TeamColor deletingColor = (TeamColor)lbColors.SelectedItem;
+            team.TeamColors.Remove(deletingColor);
+            lbColors.DataSource = team.TeamColors.ToList();
+        }
+
+        private void btnOyuncular_Click(object sender, EventArgs e)
+        {
+            if (lbTeams.SelectedIndex == -1)
+            {
+                MessageBox.Show("Lütfen bir takım seçin");
+                return;
+            }
+            Team team = (Team)lbTeams.SelectedItem;
+            TeamPlayersForm frmTeamPlayers = new TeamPlayersForm(db, team);
+            frmTeamPlayers.ShowDialog();
         }
     }
 }

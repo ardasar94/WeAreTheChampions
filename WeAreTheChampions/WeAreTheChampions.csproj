@@ -74,9 +74,9 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202102242114077_Ilk.cs" />
-    <Compile Include="Migrations\202102242114077_Ilk.designer.cs">
-      <DependentUpon>202102242114077_Ilk.cs</DependentUpon>
+    <Compile Include="Migrations\202102250747380_Ilk.cs" />
+    <Compile Include="Migrations\202102250747380_Ilk.designer.cs">
+      <DependentUpon>202102250747380_Ilk.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Color.cs" />
@@ -121,8 +121,8 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202102242114077_Ilk.resx">
-      <DependentUpon>202102242114077_Ilk.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202102250747380_Ilk.resx">
+      <DependentUpon>202102250747380_Ilk.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NewMatchForm.resx">
       <DependentUpon>NewMatchForm.cs</DependentUpon>
