@@ -24,6 +24,8 @@ namespace WeAreTheChampions
             FillDataGridView();
         }
 
+
+        //https://stackoverflow.com/questions/10073319/returning-anonymous-type-in-c-sharp
         private void FillDataGridView()
         {
             var matches = db.Matches.ToList().Select(

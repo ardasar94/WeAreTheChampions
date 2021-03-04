@@ -16,6 +16,7 @@ namespace WeAreTheChampions.Models
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            //https://www.entityframeworktutorial.net/code-first/cascade-delete-in-code-first.aspx
             modelBuilder.Entity<TeamColor>().HasKey(k => new { k.TeamId, k.ColorId});
             modelBuilder.Entity<Match>()
                         .HasRequired(m => m.Team1)
