@@ -36,7 +36,7 @@ namespace WeAreTheChampions
                     Team2 = x.Team2,
                     Date = x.MatchTime?.ToShortDateString(),
                     Time = x.MatchTime?.ToShortTimeString(),
-                    Score = x.Score1 + "-" + x.Score2 + " (" + (x.MatchTime > DateTime.Now ? "Maç Başlamadı" : "Maç bitti") + ")",
+                    Score = x.Score1 + "-" + x.Score2 + " (" + (x.MatchTime > DateTime.Now ? "Not start" : "Over") + ")",
                     MatchResult = x.Result
                 });
             dgvMatches.DataSource = matches.ToList();
