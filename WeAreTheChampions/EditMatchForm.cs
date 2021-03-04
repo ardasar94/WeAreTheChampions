@@ -49,11 +49,11 @@ namespace WeAreTheChampions
             }
 
             DateTime date = new DateTime((int)nudYear.Value, (int)nudMonth.Value, (int)nudDay.Value, (int)nudHour.Value, (int)nudMinute.Value, 0);
-            if (date < DateTime.Now)
-            {
-                MessageBox.Show("Date is unacceptable");
-                return;
-            }
+            //if (date < DateTime.Now)
+            //{
+            //    MessageBox.Show("Date is unacceptable");
+            //    return;
+            //}
             match.Team1 = (Team)cbTeam1.SelectedItem;
             match.Team2 = (Team)cbTeam2.SelectedItem;
             match.Score1 = (int)nudTeam1Score.Value;
@@ -66,6 +66,26 @@ namespace WeAreTheChampions
         private void btnCancel_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.Cancel;
+        }
+
+        private void cbTime_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbTime.Checked)
+            {
+                nudDay.Enabled = true;
+                nudMonth.Enabled = true;
+                nudYear.Enabled = true;
+                nudHour.Enabled = true;
+                nudMinute.Enabled = true;
+            }
+            else if (!cbTime.Checked)
+            {
+                nudDay.Enabled = false;
+                nudMonth.Enabled = false;
+                nudYear.Enabled = false;
+                nudHour.Enabled = false;
+                nudMinute.Enabled = false;
+            }
         }
     }
 }

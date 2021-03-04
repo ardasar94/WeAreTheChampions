@@ -142,7 +142,7 @@ namespace WeAreTheChampions
             }
             teamEditing.TeamColors.Add(new TeamColor() { Team = editingTeam, Color = (Models.Color)cboColors.SelectedItem });
             db.SaveChanges();
-            cboColors.SelectedIndex = -1;
+            //cboColors.SelectedIndex = -1;
             lbColors.DataSource = null;
             lbColors.DataSource = teamEditing.TeamColors.ToList();
         }

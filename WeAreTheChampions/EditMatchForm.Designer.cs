@@ -49,6 +49,7 @@ namespace WeAreTheChampions
             this.label9 = new System.Windows.Forms.Label();
             this.nudMonth = new System.Windows.Forms.NumericUpDown();
             this.nudDay = new System.Windows.Forms.NumericUpDown();
+            this.cbTime = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.nudMinute)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudHour)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudTeam1Score)).BeginInit();
@@ -61,7 +62,7 @@ namespace WeAreTheChampions
             // btnCancel
             // 
             this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnCancel.Location = new System.Drawing.Point(116, 365);
+            this.btnCancel.Location = new System.Drawing.Point(116, 395);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(97, 32);
             this.btnCancel.TabIndex = 23;
@@ -72,7 +73,7 @@ namespace WeAreTheChampions
             // btnEditMatch
             // 
             this.btnEditMatch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnEditMatch.Location = new System.Drawing.Point(13, 365);
+            this.btnEditMatch.Location = new System.Drawing.Point(13, 395);
             this.btnEditMatch.Name = "btnEditMatch";
             this.btnEditMatch.Size = new System.Drawing.Size(97, 32);
             this.btnEditMatch.TabIndex = 22;
@@ -84,7 +85,7 @@ namespace WeAreTheChampions
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(56, 241);
+            this.label5.Location = new System.Drawing.Point(56, 261);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(16, 24);
             this.label5.TabIndex = 21;
@@ -93,7 +94,7 @@ namespace WeAreTheChampions
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(9, 214);
+            this.label4.Location = new System.Drawing.Point(9, 234);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(145, 20);
             this.label4.TabIndex = 20;
@@ -102,7 +103,7 @@ namespace WeAreTheChampions
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(9, 147);
+            this.label3.Location = new System.Drawing.Point(9, 167);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(177, 20);
             this.label3.TabIndex = 19;
@@ -128,7 +129,8 @@ namespace WeAreTheChampions
             // 
             // nudMinute
             // 
-            this.nudMinute.Location = new System.Drawing.Point(75, 239);
+            this.nudMinute.Enabled = false;
+            this.nudMinute.Location = new System.Drawing.Point(75, 259);
             this.nudMinute.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.nudMinute.Maximum = new decimal(new int[] {
             60,
@@ -141,7 +143,8 @@ namespace WeAreTheChampions
             // 
             // nudHour
             // 
-            this.nudHour.Location = new System.Drawing.Point(13, 239);
+            this.nudHour.Enabled = false;
+            this.nudHour.Location = new System.Drawing.Point(13, 259);
             this.nudHour.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.nudHour.Maximum = new decimal(new int[] {
             24,
@@ -173,7 +176,7 @@ namespace WeAreTheChampions
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(12, 284);
+            this.label6.Location = new System.Drawing.Point(12, 304);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(112, 20);
             this.label6.TabIndex = 24;
@@ -181,14 +184,14 @@ namespace WeAreTheChampions
             // 
             // nudTeam1Score
             // 
-            this.nudTeam1Score.Location = new System.Drawing.Point(130, 282);
+            this.nudTeam1Score.Location = new System.Drawing.Point(130, 302);
             this.nudTeam1Score.Name = "nudTeam1Score";
             this.nudTeam1Score.Size = new System.Drawing.Size(49, 26);
             this.nudTeam1Score.TabIndex = 25;
             // 
             // nudTeam2Score
             // 
-            this.nudTeam2Score.Location = new System.Drawing.Point(130, 321);
+            this.nudTeam2Score.Location = new System.Drawing.Point(130, 341);
             this.nudTeam2Score.Name = "nudTeam2Score";
             this.nudTeam2Score.Size = new System.Drawing.Size(49, 26);
             this.nudTeam2Score.TabIndex = 27;
@@ -196,7 +199,7 @@ namespace WeAreTheChampions
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(12, 323);
+            this.label7.Location = new System.Drawing.Point(12, 343);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(112, 20);
             this.label7.TabIndex = 26;
@@ -206,7 +209,7 @@ namespace WeAreTheChampions
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(118, 174);
+            this.label8.Location = new System.Drawing.Point(118, 194);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(16, 24);
             this.label8.TabIndex = 29;
@@ -214,7 +217,8 @@ namespace WeAreTheChampions
             // 
             // nudYear
             // 
-            this.nudYear.Location = new System.Drawing.Point(137, 172);
+            this.nudYear.Enabled = false;
+            this.nudYear.Location = new System.Drawing.Point(137, 192);
             this.nudYear.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.nudYear.Maximum = new decimal(new int[] {
             3000,
@@ -239,7 +243,7 @@ namespace WeAreTheChampions
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(56, 174);
+            this.label9.Location = new System.Drawing.Point(56, 194);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(16, 24);
             this.label9.TabIndex = 32;
@@ -247,7 +251,8 @@ namespace WeAreTheChampions
             // 
             // nudMonth
             // 
-            this.nudMonth.Location = new System.Drawing.Point(75, 172);
+            this.nudMonth.Enabled = false;
+            this.nudMonth.Location = new System.Drawing.Point(75, 192);
             this.nudMonth.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.nudMonth.Maximum = new decimal(new int[] {
             12,
@@ -270,7 +275,8 @@ namespace WeAreTheChampions
             // 
             // nudDay
             // 
-            this.nudDay.Location = new System.Drawing.Point(13, 172);
+            this.nudDay.Enabled = false;
+            this.nudDay.Location = new System.Drawing.Point(13, 192);
             this.nudDay.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.nudDay.Maximum = new decimal(new int[] {
             31,
@@ -291,11 +297,23 @@ namespace WeAreTheChampions
             0,
             0});
             // 
+            // cbTime
+            // 
+            this.cbTime.AutoSize = true;
+            this.cbTime.Location = new System.Drawing.Point(13, 140);
+            this.cbTime.Name = "cbTime";
+            this.cbTime.Size = new System.Drawing.Size(185, 24);
+            this.cbTime.TabIndex = 33;
+            this.cbTime.Text = "Change date and time";
+            this.cbTime.UseVisualStyleBackColor = true;
+            this.cbTime.CheckedChanged += new System.EventHandler(this.cbTime_CheckedChanged);
+            // 
             // EditMatchForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(239, 405);
+            this.ClientSize = new System.Drawing.Size(239, 435);
+            this.Controls.Add(this.cbTime);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.nudMonth);
             this.Controls.Add(this.nudDay);
@@ -355,5 +373,6 @@ namespace WeAreTheChampions
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.NumericUpDown nudMonth;
         private System.Windows.Forms.NumericUpDown nudDay;
+        private System.Windows.Forms.CheckBox cbTime;
     }
 }
